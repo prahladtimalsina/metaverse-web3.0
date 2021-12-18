@@ -4,7 +4,7 @@ import { useMoralis } from "react-moralis";
 import Image from 'next/image';
 import Header from "../components/Header";
 export default function Home() {
-  const { isAuthenticated, logout } = useMoralis();
+  const { isAuthenticated } = useMoralis();
   if (!isAuthenticated) return <Login />;
   return (
     <div
@@ -21,8 +21,6 @@ export default function Home() {
         <Header />
         {/* Messages */}
       </div>
-
-      <button onClick={logout}>Logout</button>
     </div>
   );
 }
